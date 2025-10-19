@@ -35,7 +35,7 @@ A beautiful, modern JSON parser and formatter built with React. Parse, validate,
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/json-viewer.git
+git clone https://github.com/ayuboketch/json-viewer.git
 cd json-viewer
 ```
 
@@ -128,10 +128,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Your Name**
+**Ayub Oketch**
 
-- GitHub: [@ayuboketch](https://github.com/yourusername)
-- LinkedIn: [Ayub Oketch](https://linkedin.com/in/yourprofile)
+- GitHub: [@ayuboketch](https://github.com/ayuboketch)
+- LinkedIn: [Ayub Oketch](https://linkedin.com/in/ayuboketch)
 
 ## 🙏 Acknowledgments
 
