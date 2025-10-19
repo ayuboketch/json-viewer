@@ -1,6 +1,4 @@
 import "./App.css";
-import { parserLogic } from "./parserLogic.js";
-
 import { useState } from "react";
 
 export default function App() {
