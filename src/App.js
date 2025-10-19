@@ -1,4 +1,5 @@
 import "./App.css";
+import { parserLogic } from "./parserLogic.js";
 
 import { useState } from "react";
 
@@ -6,18 +7,25 @@ export default function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const handleParse = () => {
-    // You'll handle the parsing logic in your index.js later
-    // For now, we’ll just simulate calling it
     setError("");
     setOutput("");
+    setCopied(false);
     try {
       const parsed = JSON.parse(input);
       setOutput(JSON.stringify(parsed, null, 2));
     } catch (err) {
       setError(err.message);
     }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(output).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
   };
 
   return (
@@ -38,7 +46,17 @@ export default function App() {
 
         {/* Right side - Output */}
         <div className="output-section">
-          <div className="section-label">Formatted Output</div>
+          <div className="section-label">
+            <span>Formatted Output</span>
+            {output && (
+              <button
+                onClick={handleCopy}
+                className={`copy-button ${copied ? "copied" : ""}`}
+              >
+                {copied ? "✓ Copied!" : "📋 Copy"}
+              </button>
+            )}
+          </div>
 
           {error && <div className="error-message">❌ Error: {error}</div>}
 
